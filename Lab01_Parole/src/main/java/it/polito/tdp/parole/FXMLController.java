@@ -34,12 +34,18 @@ public class FXMLController {
 
     @FXML
     void doInsert(ActionEvent event) {
-    	// TODO
+    	String parola=txtParola.getText();
+    	elenco.addParola(parola);
+    	this.txtParola.clear();
+    	this.txtResult.clear();
+    	for(String p:elenco.getElenco())
+    		this.txtResult.appendText(p+"\n");
     }
 
     @FXML
     void doReset(ActionEvent event) {
-    	// TODO
+    	this.txtResult.clear();
+    	this.elenco.reset();
     }
 
     @FXML
